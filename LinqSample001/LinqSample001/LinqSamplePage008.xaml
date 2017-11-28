@@ -4,27 +4,9 @@
              x:Class="LinqSample001.LinqSamplePage008">
     <ContentPage.Content>
         <StackLayout>
-               
-                <Entry x:Name="insert"
-                Placeholder="1はインサート、0は何もしない"
+            <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-
-                <Button Text="インサート"
-                Clicked="Button_Insert"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-
-                <Button Text="セレクト"
-                Clicked="Button_Select"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-
-                
-
-               
-
-                
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

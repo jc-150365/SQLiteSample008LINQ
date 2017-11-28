@@ -71,7 +71,7 @@ namespace LinqSample001
                 try
                 {
                     //データベースに指定したSQLを発行します
-                    return db.Query<UserModel008>("SELECT * FROM [User] "); //赤線出てたから<UserModel008>付けた
+                    return db.Query<UserModel008>("SELECT * FROM [User] "); //赤線出てたから<UserModel007>付けた
 
                 }
                 catch (Exception e)
@@ -82,27 +82,5 @@ namespace LinqSample001
                 }
             }
         }
-
-        //Userテーブルのcount(*)を取得するメソッド
-        public static List<UserModel008> countUser() //赤線出てたから<UserModel77>付けた
-        {
-            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
-            {
-
-                try
-                {
-                    //データベースに指定したSQLを発行します
-                    return db.Query<UserModel008>("SELECT * COUNT(*) [User] "); //赤線出てたから<UserModel008>付けた
-
-                }
-                catch (Exception e)
-                {
-
-                    System.Diagnostics.Debug.WriteLine(e);
-                    return null;
-                }
-            }
-        }
-
     }
 }
