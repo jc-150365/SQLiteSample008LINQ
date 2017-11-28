@@ -7,41 +7,35 @@ namespace LinqSample001
         public LinqSamplePage008()
         {
             InitializeComponent();
+        }
 
-            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+        private void Button_Insert(object sender, EventArgs e)//インサートボタン押されたら
+        {
+            int i = int.Parse(insert.Text);//インサートするのかどうか
 
-            var entry = new Entry
+            if (i == 1)//1が入力されたら↓
             {
-                WidthRequest = 60,
-                TextColor = Color.White,
-                Text = "Add"
-            };
+                //Userテーブルに適当なデータを追加する
+                UserModel008.insertUser(1, "鈴木");
+                UserModel008.insertUser("田中");
+                UserModel008.insertUser("斎藤");
+            }
+        }
 
-            //Userテーブルに適当なデータを追加する
-            UserModel008.insertUser(1, "鈴木");
-            UserModel008.insertUser("田中");
-            UserModel008.insertUser("斎藤");
+        private void Button_Select(object sender, EventArgs e)//セレクトボタン押されたら
+        {
+            int count = 0;
+            count = UserModel008.countUser();
 
-            var buttonAdd = new Button
+            UserModel008.selectUser();
+
+            for (int i = 1; i <= count; i++)
             {
-                WidthRequest = 60,
-                TextColor = Color.White,
-                Text = "Add"
-            };
-
-            layout.Children.Add(buttonAdd);
-
-            //Userテーブルの行データを取得
-            var query = UserModel008.selectUser();
-
-            foreach (var user in query)
-            {
-
                 //Userテーブルの名前列をLabelに書き出す
                 layout.Children.Add(new Label { Text = user.Id.ToString() });
                 layout.Children.Add(new Label { Text = user.Name });
             }
-            Content = layout;
         }
     }
 }
+        
