@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace LinqSample001
 {
     public partial class App : Application
     {
-        public App()
+        //データベースのパスを格納
+        public static string dbPath;
+
+        //コンストラクタの引数にstring型の引数を追加
+        public App(string dbPath)
         {
+            //AppのdbPathに引数のパスを設定します
+            App.dbPath = dbPath;
+
             InitializeComponent();
 
-            MainPage = new LinqSample001.MainPage();
+            MainPage = new LinqSamplePage008();
         }
 
         protected override void OnStart()
