@@ -18,9 +18,9 @@ namespace LinqSample001
             };
 
             //Userテーブルに適当なデータを追加する
-            UserModel007.insertUser(1, "鈴木");
-            UserModel007.insertUser("田中");
-            UserModel007.insertUser("斎藤");
+            UserModel008.insertUser(1, "鈴木");
+            UserModel008.insertUser("田中");
+            UserModel008.insertUser("斎藤");
 
             var buttonAdd = new Button
             {
