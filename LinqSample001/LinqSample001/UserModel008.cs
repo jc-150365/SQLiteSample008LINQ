@@ -15,7 +15,8 @@ namespace LinqSample001
         //名前列
         public string Name { get; set; }
 
-
+        //インサートフラグ
+        public bool flug { get; set; }
 
         //Userテーブルに行追加するためのメソッド
         public static void insertUser(string name)
@@ -28,7 +29,7 @@ namespace LinqSample001
                     //データベースにUserテーブルを作成する
                     db.CreateTable<UserModel008>(); //赤線出てたから<UserModel007>付けた
                                                     //Userテーブルに行追加する
-                    db.Insert(new UserModel008() { Name = name });
+                    db.Insert(new UserModel008() { Name = name, flug = true });
                     db.Commit();
                 }
                 catch (Exception e)
@@ -50,7 +51,7 @@ namespace LinqSample001
                     //データベースにUserテーブルを作成する
                     db.CreateTable<UserModel008>(); //赤線出てたから<UserModel007>付けた
                                                     //Userテーブルに行追加する
-                    db.Insert(new UserModel008() { Name = name, Id = id });
+                    db.Insert(new UserModel008() { Name = name, Id = id, flug = true });
                     db.Commit();
                 }
                 catch (Exception e)

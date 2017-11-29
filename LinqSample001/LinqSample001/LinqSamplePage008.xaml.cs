@@ -17,16 +17,13 @@ namespace LinqSample001
                 Text = "Add"
             };
 
-            bool flug = false;
 
-            if(flug != true)
+            if(UserModel008.selectUser.flug != true) //起動の度にインサートかかるのを防ぐ
             {
                 //Userテーブルに適当なデータを追加する
                 UserModel008.insertUser(1, "鈴木");
                 UserModel008.insertUser("田中");
                 UserModel008.insertUser("斎藤");
-
-                flug = true;
             }
 
 
