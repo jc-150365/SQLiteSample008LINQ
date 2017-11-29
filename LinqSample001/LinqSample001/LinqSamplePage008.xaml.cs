@@ -26,7 +26,6 @@ namespace LinqSample001
                 UserModel008.insertUser("斎藤");
             }*/
 
-
             var insertButton = new Button
             {
                 WidthRequest = 60,
@@ -71,6 +70,7 @@ namespace LinqSample001
                 Content = layout;
 
             }
+
 
         }
     }
