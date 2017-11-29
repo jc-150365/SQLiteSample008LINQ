@@ -28,7 +28,7 @@ namespace LinqSample001
             layout.Children.Add(selectButton);
             //insertButton.Clicked += selectClicked;
 
-            void insertClicked(object sender, EventArgs e)
+            void insertClicked(/*object sender, EventArgs e*/)
             {
                 //Userテーブルに適当なデータを追加する
                 UserModel008.insertUser("1,鈴木");
@@ -36,7 +36,7 @@ namespace LinqSample001
                 UserModel008.insertUser("斎藤");
 
             }
-
+            
             /*void selectClicked(object sender, EventArgs e)
             {
                 //Userテーブルの行データを取得
