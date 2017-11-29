@@ -67,10 +67,10 @@ namespace LinqSample001
                     layout.Children.Add(new Label { Text = user.Id.ToString() });
                     layout.Children.Add(new Label { Text = user.Name });
                 }
-                Content = layout;
+                //Content = layout;
 
             }
-
+            Content = layout;
 
         }
     }
