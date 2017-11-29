@@ -10,43 +10,68 @@ namespace LinqSample001
 
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
-            var entry = new Entry
+            /*var entry = new Entry
             {
                 WidthRequest = 60,
                 TextColor = Color.White,
                 Text = "Add"
-            };
+            };*/
 
 
-            if(UserModel008.selectFlug() != true) //起動する度にインサートかかるのを防ぐ
+            /* if(UserModel008.selectFlug() != true) //起動する度にインサートかかるのを防ぐ
             {
                 //Userテーブルに適当なデータを追加する
                 UserModel008.insertUser(1, "鈴木");
                 UserModel008.insertUser("田中");
                 UserModel008.insertUser("斎藤");
-            }
+            }*/
 
 
-            var buttonAdd = new Button
+            var insertButton = new Button
             {
                 WidthRequest = 60,
-                TextColor = Color.White,
-                Text = "Add"
+                TextColor = Color.Blue,
+                Text = "insert"
             };
+            layout.Children.Add(insertButton);
+            insertButton.Clicked += insertClicked;
 
-            layout.Children.Add(buttonAdd);
-
-            //Userテーブルの行データを取得
-            var query = UserModel008.selectUser();
-
-            foreach (var user in query)
+            var selectButton = new Button
             {
+                WidthRequest = 60,
+                TextColor = Color.Blue,
+                Text = "select"
+            };
+            layout.Children.Add(selectButton);
+            insertButton.Clicked += selectClicked;
 
-                //Userテーブルの名前列をLabelに書き出す
-                layout.Children.Add(new Label { Text = user.Id.ToString() });
-                layout.Children.Add(new Label { Text = user.Name });
+
+
+            void insertClicked(object sender, EventArgs e)
+            {
+                //Userテーブルに適当なデータを追加する
+                UserModel.insertUser("鈴木");
+                UserModel.insertUser("田中");
+                UserModel.insertUser("斎藤");
+
             }
-            Content = layout;
+
+            void selectClicked(object sender, EventArgs e)
+            {
+                //Userテーブルの行データを取得
+                var query = UserModel008.selectUser();
+
+                foreach (var user in query)
+                {
+
+                    //Userテーブルの名前列をLabelに書き出す
+                    layout.Children.Add(new Label { Text = user.Id.ToString() });
+                    layout.Children.Add(new Label { Text = user.Name });
+                }
+                Content = layout;
+
+            }
+
         }
     }
 }
