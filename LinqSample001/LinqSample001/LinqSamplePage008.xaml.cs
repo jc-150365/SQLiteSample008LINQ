@@ -26,7 +26,7 @@ namespace LinqSample001
                 Text = "select"
             };
             layout.Children.Add(selectButton);
-            insertButton.Clicked += selectClicked;
+            //insertButton.Clicked += selectClicked;
 
             void insertClicked(object sender, EventArgs e)
             {
