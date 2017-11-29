@@ -28,7 +28,9 @@ namespace LinqSample001
             layout.Children.Add(selectButton);
             insertButton.Clicked += selectClicked;
 
-            void insertClicked(/*object sender, EventArgs e*/)
+            Content = layout;
+
+            void insertClicked(object sender, EventArgs e)
             {
                 //Userテーブルに適当なデータを追加する
                 UserModel008.insertUser("1,鈴木");
@@ -37,7 +39,7 @@ namespace LinqSample001
 
             }
             
-            void selectClicked(/*object sender, EventArgs e*/)
+            void selectClicked(object sender, EventArgs e)
             {
                 //Userテーブルの行データを取得
                 var query = UserModel008.selectUser();
@@ -49,9 +51,7 @@ namespace LinqSample001
                     layout.Children.Add(new Label { Text = user.Id.ToString() });
                     layout.Children.Add(new Label { Text = user.Name });
                 }
-
-               
-
+                Content = layout;
             }
             Content = layout;
         }
