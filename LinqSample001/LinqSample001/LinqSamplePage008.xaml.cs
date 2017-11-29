@@ -18,7 +18,7 @@ namespace LinqSample001
             };
 
 
-            if(UserModel008.selectUser().flug != true) //起動する度にインサートかかるのを防ぐ
+            if(UserModel008.selectUser().Flug != true) //起動する度にインサートかかるのを防ぐ
             {
                 //Userテーブルに適当なデータを追加する
                 UserModel008.insertUser(1, "鈴木");

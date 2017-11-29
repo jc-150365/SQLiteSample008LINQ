@@ -16,7 +16,7 @@ namespace LinqSample001
         public string Name { get; set; }
 
         //インサートフラグ
-        public bool flug { get; set; }
+        public bool Flug { get; set; }
 
         //Userテーブルに行追加するためのメソッド
         public static void insertUser(string name)
@@ -29,7 +29,7 @@ namespace LinqSample001
                     //データベースにUserテーブルを作成する
                     db.CreateTable<UserModel008>(); //赤線出てたから<UserModel007>付けた
                                                     //Userテーブルに行追加する
-                    db.Insert(new UserModel008() { Name = name, flug = true });
+                    db.Insert(new UserModel008() { Name = name, Flug = true });
                     db.Commit();
                 }
                 catch (Exception e)
@@ -51,7 +51,7 @@ namespace LinqSample001
                     //データベースにUserテーブルを作成する
                     db.CreateTable<UserModel008>(); //赤線出てたから<UserModel007>付けた
                                                     //Userテーブルに行追加する
-                    db.Insert(new UserModel008() { Name = name, Id = id, flug = true });
+                    db.Insert(new UserModel008() { Name = name, Id = id, Flug = true });
                     db.Commit();
                 }
                 catch (Exception e)
@@ -63,7 +63,7 @@ namespace LinqSample001
         }
 
         //Userテーブルの行データを取得するメソッド
-        public static List<UserModel008> selectUser() //赤線出てたから<UserModel77>付けた
+        public static List<UserModel008> selectUser() 
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
@@ -71,7 +71,7 @@ namespace LinqSample001
                 try
                 {
                     //データベースに指定したSQLを発行します
-                    return db.Query<UserModel008>("SELECT * FROM [User] "); //赤線出てたから<UserModel007>付けた
+                    return db.Query<UserModel008>("SELECT * FROM [User] "); 
 
                 }
                 catch (Exception e)
