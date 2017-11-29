@@ -24,9 +24,9 @@ namespace LinqSample001
                 try
                 {
                     //データベースにUserテーブルを作成する
-                    db.CreateTable<UserModel008>(); //赤線出てたから<UserModel007>付けた
-                                                    //Userテーブルに行追加する
-                    db.Insert(new UserModel008() { Name = name, Flug = true });
+                    db.CreateTable<UserModel008>(); 
+                                                    
+                    db.Insert(new UserModel008() { Name = name });
                     db.Commit();
                 }
                 catch (Exception e)
@@ -46,9 +46,9 @@ namespace LinqSample001
                 try
                 {
                     //データベースにUserテーブルを作成する
-                    db.CreateTable<UserModel008>(); //赤線出てたから<UserModel007>付けた
-                                                    //Userテーブルに行追加する
-                    db.Insert(new UserModel008() { Name = name, Id = id, Flug = true });
+                    db.CreateTable<UserModel008>(); 
+                                                   
+                    db.Insert(new UserModel008() { Name = name, Id = id });
                     db.Commit();
                 }
                 catch (Exception e)

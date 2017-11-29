@@ -10,22 +10,6 @@ namespace LinqSample001
 
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
-            /*var entry = new Entry
-            {
-                WidthRequest = 60,
-                TextColor = Color.White,
-                Text = "Add"
-            };*/
-
-
-            /* if(UserModel008.selectFlug() != true) //起動する度にインサートかかるのを防ぐ
-            {
-                //Userテーブルに適当なデータを追加する
-                UserModel008.insertUser(1, "鈴木");
-                UserModel008.insertUser("田中");
-                UserModel008.insertUser("斎藤");
-            }*/
-
             var insertButton = new Button
             {
                 WidthRequest = 60,
@@ -43,8 +27,6 @@ namespace LinqSample001
             };
             layout.Children.Add(selectButton);
             insertButton.Clicked += selectClicked;
-
-
 
             void insertClicked(object sender, EventArgs e)
             {
