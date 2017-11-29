@@ -82,5 +82,27 @@ namespace LinqSample001
                 }
             }
         }
+
+        //Userテーブルの行データを取得するメソッド
+        public static List<UserModel008> selectFlug()
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+
+                try
+                {
+                    //データベースに指定したSQLを発行します
+                    return db.Query<UserModel008>("SELECT Flug FROM [User] ");
+
+                }
+                catch (Exception e)
+                {
+
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return null;
+                }
+            }
+        }
+
     }
 }
