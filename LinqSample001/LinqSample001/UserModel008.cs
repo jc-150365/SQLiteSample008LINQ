@@ -15,8 +15,7 @@ namespace LinqSample001
         //名前列
         public string Name { get; set; }
 
-        //画像列(仮)
-        public byte[] Picture { get; set; }
+
 
         //Userテーブルに行追加するためのメソッド
         public static void insertUser(string name)

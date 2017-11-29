@@ -17,10 +17,18 @@ namespace LinqSample001
                 Text = "Add"
             };
 
-            //Userテーブルに適当なデータを追加する
-            UserModel008.insertUser(1, "鈴木");
-            UserModel008.insertUser("田中");
-            UserModel008.insertUser("斎藤");
+            bool flug = false;
+
+            if(flug != true)
+            {
+                //Userテーブルに適当なデータを追加する
+                UserModel008.insertUser(1, "鈴木");
+                UserModel008.insertUser("田中");
+                UserModel008.insertUser("斎藤");
+
+                flug = true;
+            }
+
 
             var buttonAdd = new Button
             {
