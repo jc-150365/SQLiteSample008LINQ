@@ -54,8 +54,8 @@ namespace LinqSample001
             foreach (var user in query)
             {
                 //UserテーブルのId列とName列をLabelに書き出す
-                layout.Children.Add(new Label { Text = user.Name });
                 layout.Children.Add(new Label { Text = user.Id.ToString() });
+                layout.Children.Add(new Label { Text = user.Name });
             }
             Content = layout;
         }
