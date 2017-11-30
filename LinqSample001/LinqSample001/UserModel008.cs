@@ -68,7 +68,7 @@ namespace LinqSample001
                 try
                 {
                     //データベースに指定したSQLを発行します
-                    return db.Query<UserModel008>("SELECT * FROM [User] "); 
+                    return db.Query<UserModel008>("SELECT * FROM [User] ORDER BY Id DESC"); 
 
                 }
                 catch (Exception e)
@@ -91,8 +91,7 @@ namespace LinqSample001
                     //データベースにUserテーブルを作成する
                     db.CreateTable<UserModel008>();
 
-                    //db.Insert(new UserModel008() { Name = name });
-                    db.Delete<UserModel008>(id);
+                    db.Delete<UserModel008>(id);//デリートで渡す値は主キーじゃないといけない説
                     db.Commit();
                 }
                 catch (Exception e)
