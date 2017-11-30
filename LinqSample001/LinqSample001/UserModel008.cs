@@ -67,7 +67,7 @@ namespace LinqSample001
 
                 try
                 {
-                    //データベースに指定したSQLを発行します
+                    //データベースに指定したSQLを発行
                     return db.Query<UserModel008>("SELECT * FROM [User] ORDER BY Id DESC"); 
 
                 }
