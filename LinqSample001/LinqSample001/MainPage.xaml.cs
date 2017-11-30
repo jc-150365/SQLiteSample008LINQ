@@ -13,7 +13,7 @@ namespace LinqSample001
 
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
-            //-------------------------------insertします-------------------------------
+            //-------------------------------インサートボタン-------------------------------
             var Insert = new Button
             {
                 WidthRequest = 60,
@@ -23,7 +23,7 @@ namespace LinqSample001
             layout.Children.Add(Insert);
             Insert.Clicked += InsertClicked;
 
-            //--------------------------------deleteします------------------------------
+            //--------------------------------デリートボタン------------------------------
             var Delete = new Button
             {
                 WidthRequest = 60,
@@ -33,7 +33,7 @@ namespace LinqSample001
             layout.Children.Add(Delete);
             Delete.Clicked += DeleteClicked;
 
-            //--------------------------------selectします------------------------------
+            //--------------------------------セレクトボタン------------------------------
             var Select = new Button
             {
                 WidthRequest = 60,
@@ -49,7 +49,7 @@ namespace LinqSample001
         void SelectClicked(object sender, EventArgs e)
         {
             //Userテーブルの行データを取得
-            var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
+            var query = UserModel008.selectUser(); //中身はSELECT * FROM [User]
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
             foreach (var user in query)
             {
@@ -62,9 +62,9 @@ namespace LinqSample001
         void InsertClicked(object sender, EventArgs e)
         {
             //Userテーブルに適当なデータを追加する
-            UserModel.insertUser("鈴木");
-            UserModel.insertUser("田中");
-            UserModel.insertUser("斎藤");
+            UserModel008.insertUser("鈴木");
+            UserModel008.insertUser("田中");
+            UserModel008.insertUser("斎藤");
 
         }
 
