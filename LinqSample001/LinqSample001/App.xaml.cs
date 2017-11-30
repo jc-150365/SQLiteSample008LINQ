@@ -15,7 +15,7 @@ namespace LinqSample001
 
             InitializeComponent();
 
-            MainPage = new LinqSample001.MainPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
