@@ -17,8 +17,8 @@ namespace LinqSample001
             var Insert = new Button
             {
                 WidthRequest = 60,
-                Text = "Insert!",
-                TextColor = Color.Red,
+                Text = "INSERT",
+                TextColor = Color.Blue,
             };
             layout.Children.Add(Insert);
             Insert.Clicked += InsertClicked;
@@ -27,8 +27,8 @@ namespace LinqSample001
             var Delete = new Button
             {
                 WidthRequest = 60,
-                Text = "Delete!",
-                TextColor = Color.Red,
+                Text = "DELETE",
+                TextColor = Color.Blue,
             };
             layout.Children.Add(Delete);
             Delete.Clicked += DeleteClicked;
@@ -37,8 +37,8 @@ namespace LinqSample001
             var Select = new Button
             {
                 WidthRequest = 60,
-                Text = "Select!",
-                TextColor = Color.Red,
+                Text = "SELECT",
+                TextColor = Color.Blue,
             };
             layout.Children.Add(Select);
             Select.Clicked += SelectClicked;
@@ -46,7 +46,7 @@ namespace LinqSample001
             Content = layout;
         }
 
-        void SelectClicked(object sender, EventArgs e)
+        public void SelectClicked(object sender, EventArgs e)
         {
             //Userテーブルの行データを取得
             var query = UserModel008.selectUser(); //中身はSELECT * FROM [User]
@@ -59,7 +59,7 @@ namespace LinqSample001
             Content = layout;
         }
 
-        void InsertClicked(object sender, EventArgs e)
+        public void InsertClicked(object sender, EventArgs e)
         {
             //Userテーブルに適当なデータを追加する
             UserModel008.insertUser("鈴木");
@@ -68,10 +68,9 @@ namespace LinqSample001
 
         }
 
-        void DeleteClicked(object sender, EventArgs e)
+        public void DeleteClicked(object sender, EventArgs e)
         {
-            //Userテーブルに適当なデータを追加する まだです
-            //UserModel.deleteUser("鈴木");
+            UserModel008.deleteUser("鈴木");
 
         }
     }

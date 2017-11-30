@@ -15,7 +15,7 @@ namespace LinqSample001
         //名前列
         public string Name { get; set; }
 
-        //Userテーブルに行追加するためのメソッド
+        /****************************インサートメソッド********************/
         public static void insertUser(string name)
         {
             //データベースに接続する
@@ -37,7 +37,7 @@ namespace LinqSample001
             }
         }
 
-        //Userテーブルに行追加するためのメソッド（↑オーバーロードした）
+        /********************インサートメソッド（オーバーロード）*********************/
         public static void insertUser(int id, string name)
         {
             //データベースに接続する
@@ -59,7 +59,7 @@ namespace LinqSample001
             }
         }
 
-        //Userテーブルの行データを取得するメソッド
+        /*******************セレクトメソッド**************************************/
         public static List<UserModel008> selectUser() 
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -76,6 +76,29 @@ namespace LinqSample001
 
                     System.Diagnostics.Debug.WriteLine(e);
                     return null;
+                }
+            }
+        }
+
+        /********************デリートメソッド*************************************/
+        public static void deleteUser(string name)
+        {
+            //データベースに接続する
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try
+                {
+                    //データベースにUserテーブルを作成する
+                    db.CreateTable<UserModel008>();
+
+                    //db.Insert(new UserModel008() { Name = name });
+                    db.Delete<UserModel008>(name);
+                    db.Commit();
+                }
+                catch (Exception e)
+                {
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
                 }
             }
         }
