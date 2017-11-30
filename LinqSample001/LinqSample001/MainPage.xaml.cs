@@ -62,7 +62,7 @@ namespace LinqSample001
         public void InsertClicked(object sender, EventArgs e)
         {
             //Userテーブルに適当なデータを追加する
-            UserModel008.insertUser("鈴木");
+            UserModel008.insertUser(1,"鈴木");
             UserModel008.insertUser("田中");
             UserModel008.insertUser("斎藤");
 
@@ -70,7 +70,7 @@ namespace LinqSample001
 
         public void DeleteClicked(object sender, EventArgs e)
         {
-            UserModel008.deleteUser("鈴木");
+            //UserModel008.deleteUser("鈴木");
 
         }
     }
