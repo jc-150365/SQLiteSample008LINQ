@@ -81,7 +81,7 @@ namespace LinqSample001
         }
 
         /********************デリートメソッド*************************************/
-        public static void deleteUser(string name)
+        public static void deleteUser(int id)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -92,7 +92,7 @@ namespace LinqSample001
                     db.CreateTable<UserModel008>();
 
                     //db.Insert(new UserModel008() { Name = name });
-                    db.Delete<UserModel008>(name);
+                    db.Delete<UserModel008>(id);
                     db.Commit();
                 }
                 catch (Exception e)
