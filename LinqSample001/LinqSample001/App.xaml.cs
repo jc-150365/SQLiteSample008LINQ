@@ -10,12 +10,12 @@ namespace LinqSample001
         //コンストラクタの引数にstring型の引数を追加
         public App(string dbPath)
         {
-            //AppのdbPathに引数のパスを設定します
+            //AppのdbPathに引数のパスを設定
             App.dbPath = dbPath;
 
             InitializeComponent();
 
-            MainPage = new LinqSamplePage008();
+            MainPage = new LinqSample001.MainPage();
         }
 
         protected override void OnStart()
