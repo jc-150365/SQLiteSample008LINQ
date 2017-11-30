@@ -1,4 +1,4 @@
-﻿using Xamarin.Forms;
+﻿/*using Xamarin.Forms;
 
 namespace LinqSample001
 {
@@ -56,4 +56,4 @@ namespace LinqSample001
             Content = layout;
         }
     }
-}
+}*/
