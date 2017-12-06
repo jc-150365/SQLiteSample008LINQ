@@ -13,14 +13,14 @@ namespace LinqSample001
 
             //Userテーブルの行データを取得
             var query = UserModel008.selectUser();
-            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+            var layout2 = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
             foreach (var user in query)
             {
                 //UserテーブルのId列とName列をLabelに書き出す
                 layout.Children.Add(new Label { Text = user.Id.ToString() });
                 layout.Children.Add(new Label { Text = user.Name });
             }
-            Content = layout;
+            Content = layout2;
 
             //-------------------------------インサートボタン-------------------------------
             var Insert = new Button
