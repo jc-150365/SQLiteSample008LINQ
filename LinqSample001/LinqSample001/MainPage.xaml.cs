@@ -18,7 +18,7 @@ namespace LinqSample001
             {
                 WidthRequest = 60
             };
-            layout.Children.Add(insertEntry);
+            layout.Children.Add(InsertText);
 
 
             //-------------------------------インサートボタン-------------------------------
