@@ -5,7 +5,7 @@ namespace LinqSample001
 {
     public partial class MainPage : ContentPage
     {
-        private Entry insertEntry; //テキストボックスの値を保持する
+        private Entry InsertEntry; //テキストボックスの値を保持する
 
         public MainPage()
         {
@@ -14,11 +14,11 @@ namespace LinqSample001
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
             //-----------------------------インサートするテキストボックス-------------------
-            var InsertText = new Entry
+            InsertEntry = new Entry
             {
                 WidthRequest = 60
             };
-            layout.Children.Add(InsertText);
+            layout.Children.Add(InsertEntry);
 
 
             //-------------------------------インサートボタン-------------------------------
@@ -91,7 +91,7 @@ namespace LinqSample001
         public void InsertClicked(object sender, EventArgs e)
         {
             //Userテーブルに適当なデータを追加する
-            UserModel008.insertUser(1,insertEntry.Text);
+            UserModel008.insertUser(1,InsertEntry.Text);
 
             //Userテーブルの行データを取得
             var query = UserModel008.selectUser();
