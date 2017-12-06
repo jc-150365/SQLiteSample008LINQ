@@ -91,7 +91,8 @@ namespace LinqSample001
         public void InsertClicked(object sender, EventArgs e)
         {
             //Userテーブルに適当なデータを追加する
-            UserModel.insertUser(1,insertEntry.Text);
+            string InsertData = insertEntry.Text;
+            UserModel.insertUser(1,InsertData);
 
             //Userテーブルの行データを取得
             var query = UserModel008.selectUser();
