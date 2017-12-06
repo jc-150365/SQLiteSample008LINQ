@@ -5,11 +5,21 @@ namespace LinqSample001
 {
     public partial class MainPage : ContentPage
     {
+        private Entry insertEntry; //テキストボックスの値を保持する
+
         public MainPage()
         {
             InitializeComponent();
 
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+
+            //-----------------------------インサートするテキストボックス-------------------
+            var InsertText = new Entry
+            {
+                WidthRequest = 60
+            };
+            layout.Children.Add(insertEntry);
+
 
             //-------------------------------インサートボタン-------------------------------
             var Insert = new Button
@@ -58,12 +68,30 @@ namespace LinqSample001
             Content = layout;
         }
 
-        public void InsertClicked(object sender, EventArgs e)
+        /*public void InsertClicked(object sender, EventArgs e)
         {
             //Userテーブルに適当なデータを追加する
             UserModel008.insertUser(1,"鈴木");
             UserModel008.insertUser("田中");
             UserModel008.insertUser("斎藤");
+
+            //Userテーブルの行データを取得
+            var query = UserModel008.selectUser();
+            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+            foreach (var user in query)
+            {
+                //UserテーブルのId列とName列をLabelに書き出す
+                layout.Children.Add(new Label { Text = user.Id.ToString() });
+                layout.Children.Add(new Label { Text = user.Name });
+            }
+            Content = layout;
+
+        }*/
+
+        public void InsertClicked(object sender, EventArgs e)
+        {
+            //Userテーブルに適当なデータを追加する
+            UserModel.insertUser(1,insertEntry.Text);
 
             //Userテーブルの行データを取得
             var query = UserModel008.selectUser();
