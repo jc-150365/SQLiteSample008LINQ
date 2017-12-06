@@ -92,7 +92,7 @@ namespace LinqSample001
         {
             //Userテーブルに適当なデータを追加する
             var InsertData = insertEntry.Text;
-            UserModel.insertUser(1,InsertData);
+            UserModel008.insertUser(1,InsertData);
 
             //Userテーブルの行データを取得
             var query = UserModel008.selectUser();
