@@ -48,7 +48,7 @@ namespace LinqSample001
                     //データベースにUserテーブルを作成する
                     db.CreateTable<UserModel008>(); 
                                                    
-                    db.Insert(new UserModel008() { Name = name, Id = id });
+                    db.Insert(new UserModel008() { Id = id, Name = name });
                     db.Commit();
                 }
                 catch (Exception e)
