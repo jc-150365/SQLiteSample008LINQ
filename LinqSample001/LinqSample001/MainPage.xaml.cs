@@ -51,9 +51,21 @@ namespace LinqSample001
             layout.Children.Add(Select);
             Select.Clicked += SelectClicked;
 
+            //-----------------------------selectした結果がnullじゃなかったら（=表の中身が入っていたらselectメソッドを実行）----------------------
+            if (UserModel008.selectUser() != null)
+            {
+                var query = UserModel008.selectUser(); 
+                                                    
+                foreach (var user in query)
+                {
+                    //Userテーブルの名前列をLabelに書き出す
+                    layout.Children.Add(new Label { Text = user.Id.ToString() });
+                    layout.Children.Add(new Label { Text = user.Name });
+                }
+            }
             Content = layout;
         }
-
+        
         public void SelectClicked(object sender, EventArgs e)
         {
             //Userテーブルの行データを取得
@@ -67,26 +79,6 @@ namespace LinqSample001
             }
             Content = layout;
         }
-
-        /*public void InsertClicked(object sender, EventArgs e)
-        {
-            //Userテーブルに適当なデータを追加する
-            UserModel008.insertUser(1,"鈴木");
-            UserModel008.insertUser("田中");
-            UserModel008.insertUser("斎藤");
-
-            //Userテーブルの行データを取得
-            var query = UserModel008.selectUser();
-            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
-            foreach (var user in query)
-            {
-                //UserテーブルのId列とName列をLabelに書き出す
-                layout.Children.Add(new Label { Text = user.Id.ToString() });
-                layout.Children.Add(new Label { Text = user.Name });
-            }
-            Content = layout;
-
-        }*/
 
         public void InsertClicked(object sender, EventArgs e)
         {
