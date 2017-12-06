@@ -68,7 +68,7 @@ namespace LinqSample001
                 try
                 {
                     //データベースに指定したSQLを発行
-                    return db.Query<UserModel008>("SELECT * FROM [User] ORDER BY Id DESC"); 
+                    return db.Query<UserModel008>("SELECT * FROM [User]"); 
 
                 }
                 catch (Exception e)
@@ -90,7 +90,7 @@ namespace LinqSample001
                 {
                     //データベースにUserテーブルを作成する
                     db.CreateTable<UserModel008>();
-
+                    
                     db.Delete<UserModel008>(id);//デリートで渡す値は主キーじゃないといけない説
                     db.Commit();
                 }
@@ -100,6 +100,12 @@ namespace LinqSample001
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }
+        }
+
+        /*********************Idの降順にソートするメソッド**********************/
+        public static void Orderby()
+        {
+          
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 
-//参考url http://dev-suesan.hatenablog.com/entry/2017/03/06/005206
-
 namespace LinqSample001
 {
     public partial class MainPage : ContentPage
@@ -12,6 +10,17 @@ namespace LinqSample001
             InitializeComponent();
 
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+
+            //Userテーブルの行データを取得
+            var query = UserModel008.selectUser();
+            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+            foreach (var user in query)
+            {
+                //UserテーブルのId列とName列をLabelに書き出す
+                layout.Children.Add(new Label { Text = user.Id.ToString() });
+                layout.Children.Add(new Label { Text = user.Name });
+            }
+            Content = layout;
 
             //-------------------------------インサートボタン-------------------------------
             var Insert = new Button
@@ -49,7 +58,7 @@ namespace LinqSample001
         public void SelectClicked(object sender, EventArgs e)
         {
             //Userテーブルの行データを取得
-            var query = UserModel008.selectUser(); //中身はSELECT * FROM [User]
+            var query = UserModel008.selectUser();
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
             foreach (var user in query)
             {
@@ -66,6 +75,17 @@ namespace LinqSample001
             UserModel008.insertUser(1,"鈴木");
             UserModel008.insertUser("田中");
             UserModel008.insertUser("斎藤");
+
+            //Userテーブルの行データを取得
+            var query = UserModel008.selectUser();
+            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+            foreach (var user in query)
+            {
+                //UserテーブルのId列とName列をLabelに書き出す
+                layout.Children.Add(new Label { Text = user.Id.ToString() });
+                layout.Children.Add(new Label { Text = user.Name });
+            }
+            Content = layout;
 
         }
 
