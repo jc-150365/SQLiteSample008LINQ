@@ -127,6 +127,8 @@ namespace LinqSample001
             layout.Children.Add(Select);
             Select.Clicked += SelectClicked;
 
+            Content = layout;
+
             //-----------------------------selectした結果がnullじゃなかったら（=表の中身が入っていたらselectメソッドを実行）----------------------
             /*if (UserModel008.selectUser() != null)
             {
