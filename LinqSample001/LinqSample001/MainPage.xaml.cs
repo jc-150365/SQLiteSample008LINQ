@@ -128,7 +128,7 @@ namespace LinqSample001
             Select.Clicked += SelectClicked;
 
             //-----------------------------selectした結果がnullじゃなかったら（=表の中身が入っていたらselectメソッドを実行）----------------------
-            if (UserModel008.selectUser() != null)
+            /*if (UserModel008.selectUser() != null)
             {
                 var query = UserModel008.selectUser();
 
@@ -139,7 +139,7 @@ namespace LinqSample001
                     layout.Children.Add(new Label { Text = user.Name });
                 }
             }
-            Content = layout;
+            Content = layout;*/
 
 
             //Userテーブルの行データを取得
