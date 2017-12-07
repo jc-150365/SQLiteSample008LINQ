@@ -127,34 +127,17 @@ namespace LinqSample001
             layout.Children.Add(Select);
             Select.Clicked += SelectClicked;
 
-            Content = layout;
+           　/************セレクトかける*********************/
+             var query = UserModel008.selectUser();
 
-            //-----------------------------selectした結果がnullじゃなかったら（=表の中身が入っていたらselectメソッドを実行）----------------------
-            /*if (UserModel008.selectUser() != null)
-            {
-                var query = UserModel008.selectUser();
-
-                foreach (var user in query)
-                {
-                    //Userテーブルの名前列をLabelに書き出す
-                    layout.Children.Add(new Label { Text = user.Id.ToString() });
-                    layout.Children.Add(new Label { Text = user.Name });
-                }
-            }
-            Content = layout;*/
-
-
-            //Userテーブルの行データを取得
-            /*var query = UserModel008.selectUser();
-            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
-            foreach (var user in query)
-            {
-                //UserテーブルのId列とName列をLabelに書き出す
+             foreach (var user in query)
+             {
+                //Userテーブルの名前列をLabelに書き出す
                 layout.Children.Add(new Label { Text = user.Id.ToString() });
                 layout.Children.Add(new Label { Text = user.Name });
-            }
-            Content = layout;*/
-
+             }
+            
+            Content = layout;
         }
         
         /********************************デリートボタンが押されたら************************************************************************/
