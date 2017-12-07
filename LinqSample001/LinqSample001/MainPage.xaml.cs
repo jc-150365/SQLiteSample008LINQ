@@ -54,8 +54,8 @@ namespace LinqSample001
             //-----------------------------selectした結果がnullじゃなかったら（=表の中身が入っていたらselectメソッドを実行）----------------------
             if (UserModel008.selectUser() != null)
             {
-                var query = UserModel008.selectUser(); 
-                                                    
+                var query = UserModel008.selectUser();
+
                 foreach (var user in query)
                 {
                     //Userテーブルの名前列をLabelに書き出す
@@ -65,7 +65,7 @@ namespace LinqSample001
             }
             Content = layout;
         }
-        
+    }   
         public void SelectClicked(object sender, EventArgs e)
         {
             //Userテーブルの行データを取得
@@ -146,7 +146,4 @@ namespace LinqSample001
             UserModel008.deleteUser(1);
 
         }
-    }
-
-
-}
+ }
