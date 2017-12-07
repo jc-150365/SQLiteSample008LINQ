@@ -65,7 +65,7 @@ namespace LinqSample001
             }
             Content = layout;
         }
-    }   
+
         public void SelectClicked(object sender, EventArgs e)
         {
             //Userテーブルの行データを取得
@@ -84,7 +84,7 @@ namespace LinqSample001
         public void InsertClicked(object sender, EventArgs e)
         {
             //Userテーブルに適当なデータを追加する
-            UserModel008.insertUser(1,InsertEntry.Text);
+            UserModel008.insertUser(1, InsertEntry.Text);
 
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
@@ -127,23 +127,24 @@ namespace LinqSample001
             layout.Children.Add(Select);
             Select.Clicked += SelectClicked;
 
-           　/************セレクトかける*********************/
-             var query = UserModel008.selectUser();
+            /************セレクトかける*********************/
+            var query = UserModel008.selectUser();
 
-             foreach (var user in query)
-             {
+            foreach (var user in query)
+            {
                 //Userテーブルの名前列をLabelに書き出す
                 layout.Children.Add(new Label { Text = user.Id.ToString() });
                 layout.Children.Add(new Label { Text = user.Name });
-             }
-            
+            }
+
             Content = layout;
         }
-        
+
         /********************************デリートボタンが押されたら************************************************************************/
         public void DeleteClicked(object sender, EventArgs e)
         {
             UserModel008.deleteUser(1);
 
         }
- }
+    }
+}
